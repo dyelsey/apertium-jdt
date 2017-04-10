@@ -1,0 +1,449 @@
+! Morphological Transducer for jdt
+
+Multichar_Symbols
+
+! Part of speech categories
+%<n%>     ! Noun
+%<v%> ! Verb
+%<num%>   ! Number
+%<adj%>   ! Adjective
+%<adv%>   ! Adverb
+%<prn%>   ! Pronoun
+%<inf%>   ! Infinitive
+%<post%>  ! Preposition
+
+! Number morphology
+%<pl%>    ! Plural
+%<sg%>    ! Singular
+%<np%>
+! tense
+%<az%> !
+%<pres%>  ! Present
+%<attr%>  ! Attributive
+%<p1%>    ! First person
+%<p2%>    ! Second person
+%<p3%>    ! Third person
+%<past%>  ! Past
+%<pers%>  ! Person
+%<dem%>   ! Demonstrative
+%<nom%>   ! Nominative
+%<gen%>	  ! genitive
+%<ez%>
+
+! Other symbols
+%>        ! Morpheme boundary
+%<dem%>   ! Demonstrative
+%<nn%>    ! Inanimate
+%<caus%>  ! Causative
+%<neg%>   ! Negative
+%<abst%>  ! Abstract
+% 		  ! a space
+
+%<aor%>   ! Aorist
+%<class%> ! Classifier
+%<art%>   ! Article
+%<dat%>   ! Dative
+%<loc%>   ! Locative
+%<prs%>   ! Present subjunctive
+%<ins%>   ! Instrumentals
+
+! punctuation
+%<sent%>  ! Sentence marker
+%<guio%>  ! Hyphen
+%<cm%>    ! Comma
+%<apos%>  ! Apostrophe
+%<rquot%> ! Quote marker (right hand side)
+%<lquot%> ! Quote marker (left hand side)
+%<rpar%>  ! Parenthetical marker (right hand side)
+%<lpar%>  ! Parenthetical marker (left hand side)
+
+%[%-neg%] !negative verb
+%[%+neg%]
+%[%-nen%] !negative noun
+%[%+nen%]
+%[%-loc%] !locative noun
+%[%+loc%]
+
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!!                       M O R P H O T A C T I C S                         !!!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+LEXICON Root
+
+PrefixRoot ;
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+LEXICON PrefixRoot
+
+%[%-neg%]:не VerbRoot ;
+%[%-nen%]:би NounRoot ;
+%[%-loc%]:е NounRoot ;
+VerbRoot ;
+NounRoot ;
+PronounRoot ;
+NumberRoot ;
+PrepositionRoot ;
+AdverbRoot ;
+AdjectiveRoot ;
+ArticleRoot ;
+AblativeRoot ;
+Punctuation ;
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+LEXICON RegNumber
+
+%<num%>: # ;
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+LEXICON RegArticle
+
+%<art%>%<p1%>: # ;
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+LEXICON RegAdjective
+%<adj%>: # ;
+%<n%>%<az%>:и # ;
+%<n%>%<attr%>+%<adj%>: # ;
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+LEXICON Punctuation
+
+.%<sent%>:. # ;
+..%<sent%>:.. # ;
+...%<sent%>:... # ;
+%;%<sent%>:%; # ;
+%:%<sent%>:%: # ;
+%!%<sent%>:%! # ;
+%-%<guio%>:%- # ;
+%—%<guio%>:%— # ;
+,%<cm%>:, # ;
+%?%<sent%>:%? # ;
+%'%<apos%>:%' # ;
+%"%<sent%>:%" # ;
+%«%<lquot%>:%« # ;
+%»%<rquot%>:%» # ;
+%”%<rquot%>:%” # ;
+%“%<lquot%>:%“ # ;
+%(%<lpar%>:%( # ;
+%]%<rpar%>:%] # ;
+%[%<lpar%>:%[ # ;
+%)%<rpar%>:%) # ;
+\%<sent%>:\ # ;
+/%<sent%>:/ # ;
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+LEXICON RegVerbCon
+
+%<v%>%<inf%>:де #  ;
+
+%<v%>: # ;
+%<v%>%<past%>%<p1%>%<sg%>:дум #  ;
+%<v%>%<past%>%<p3%>%<sg%>:д #  ;
+%<v%>%<past%>%<p3%>%<pl%>:гьо #  ;
+
+%<v%>%<sg%>%<p1%>: #  ;
+%<v%>%<caus%>%<inf%>:унде #  ; ! caustative
+
+%<v%>%<aor%>%<sg%>%<p1%>:дум #  ;
+%<v%>%<aor%>%<sg%>%<p2%>:ди #  ;
+%<v%>%<aor%>%<sg%>%<p3%>:д #  ;
+
+%<v%>%<aor%>%<pl%>%<p1%>:дим #  ;
+%<v%>%<aor%>%<pl%>%<p2%>:дит #  ;
+%<v%>%<aor%>%<pl%>%<p3%>:дут #  ;
+
+%<v%>%<aor%>%<sg%>%<p1%>%<neg%>%[+neg%]:дум # ;
+%<v%>%<aor%>%<sg%>%<p2%>%<neg%>%[+neg%]:ди # ;
+%<v%>%<aor%>%<sg%>%<p3%>%<neg%>%[+neg%]:д # ;
+
+%<v%>%<aor%>%<pl%>%<p1%>%<neg%>%[+neg%]:дим # ;
+%<v%>%<aor%>%<pl%>%<p2%>%<neg%>%[+neg%]:дит # ;
+%<v%>%<aor%>%<pl%>%<p3%>%<neg%>%[+neg%]:дут # ;
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+LEXICON RegVerbVow
+
+%<v%>: # ;
+%<v%>%<inf%>:ре #  ;
+%<v%>%<past%>%<p1%>:рум #  ;
+%<v%>%<past%>%<p3%>%<sg%>: #  ;
+%<v%>%<sg%>%<p1%>: #  ;
+%<v%>%<caus%>%<inf%>:унде #  ; ! caustative
+
+%<v%>%<aor%>%<sg%>%<p1%>:рум #  ;
+%<v%>%<aor%>%<sg%>%<p2%>:ри #  ;
+%<v%>%<aor%>%<sg%>%<p3%>: #  ;
+
+%<v%>%<aor%>%<pl%>%<p1%>:рим #  ;
+%<v%>%<aor%>%<pl%>%<p2%>:рит #  ;
+%<v%>%<aor%>%<pl%>%<p3%>:рут #  ;
+
+%<v%>%<aor%>%<sg%>%<p1%>%<neg%>%[+neg%]:рум #  ;
+%<v%>%<aor%>%<sg%>%<p2%>%<neg%>%[+neg%]:ри #  ;
+%<v%>%<aor%>%<sg%>%<p3%>%<neg%>%[+neg%]: #  ;
+
+%<v%>%<aor%>%<pl%>%<p1%>%<neg%>%[+neg%]:рим #  ;
+%<v%>%<aor%>%<pl%>%<p2%>%<neg%>%[+neg%]:рит #  ;
+%<v%>%<aor%>%<pl%>%<p3%>%<neg%>%[+neg%]:рут #  ;
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+LEXICON IrreVerb
+
+%<v%>%<past%>%<p1%>:сдорум # ;
+%<v%>%<inf%>:ре #  ;
+%<v%>%<past%>%<p3%>%<sg%>:сдо #  ;
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+LEXICON RegPreposition
+
+%<post%>: # ;
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+LEXICON RegNounInfl
+
+
+%<n%>: # ;
+%<n%>%<sg%>: # ;
+%<n%>%<prs%>%<p1%>:денуьм # ;
+
+%<n%>%<pl%>:гьо # ;
+%<n%>%<neg%>%[+nen%]: # ;
+%<n%>%<dat%>:е # ;
+%<abl%>: # ;
+%<n%>%<loc%>%[+loc%]: # ;
+%<n%>%<loc%>%<ins%>%[+loc%]:евоз # ;
+%<n%>%<pl%>%<ez%>:гьой # ;
+%<n%>%<adj%>:дуразе # ;
+%<n%>%<adj%>:зарзарийе # ;
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+LEXICON RegAdverb
+
+%<n%>%<abst%>:и # ;
+%<adv%>: # ;
+%<class%>: # ;
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+LEXICON RegAblative
+
+%<abl%>: # ;
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!!                          L E X I C O N                                  !!!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+LEXICON AdjectiveRoot
+согъ%<adj%>:согъ # ; ! adjective
+дуне:дуне RegAdjective ; ! adjective
+поиз:поиз RegAdjective ; ! adjective
+сенгъ:сенгъ RegAdjective ; ! adjective
+дуьлшоре:дуьлшоре RegAdjective ; ! adjective
+хийегьелуье:хийегьелуье  RegAdjective ; ! adjective
+шиновус%<adj%>:шиновус # ;
+шиновусдей%<adj%>:шиновусдей # ;
+жежурехуно%<adj%>%<dat%>:жежурехуно # ;
+тимтиж%<adj%>:тимтиж # ;
+хуьшге%<adj%>:хуьшге # ;
+тозе%<adj%>:тозе # ;
+герек%<adj%>:герек # ;
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+LEXICON AdverbRoot
+
+бордор:бордор RegAdverb ; ! an adverb
+есир:есир RegAdverb ; ! an adverb
+нуькер:нуькер RegAdverb ; ! an adverb
+е% бедире%<art%>%<p1%>%<class%>:е% бедире # ; ! an adverb
+е% одгъу%<art%>%<p1%>%<class%>:е% одгъу # ; ! an adverb
+е% ниме%<art%>%<p1%>%<class%>:е% ниме # ; ! an adverb
+е% жуьфд%<art%>%<class%>:е% жуьфд # ;
+
+!жуьфд%<class%>:жуьфд # ;
+доне%<class%>:доне # ; ! an adverb
+е%<adv%>:е # ; ! an adverb
+гьерчуьтам%<adv%>:гьерчуьтам # ;
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+LEXICON ArticleRoot
+
+е%<art%>%<p1%>:е # ; ! an article
+э:э RegArticle ; ! an article
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+LEXICON AblativeRoot
+
+эз:эз RegAblative ; ! an ablative
+
+
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+LEXICON NumberRoot
+
+дегь:дегь RegNumber ; ! a number
+дуь:дуь RegNumber ; ! a number
+ек:ек RegNumber ; ! a number
+еки:еки RegNumber ; ! a number
+нуьгь:нуьгь RegNumber ; ! a number
+пенж:пенж RegNumber ; ! a number
+сесе:се RegNumber ; ! a number
+се:се RegNumber ; ! a number
+хьофд:хьофд RegNumber ; ! a number
+хьэшд:хьэшд RegNumber ; ! a number
+чор:чор RegNumber ; ! a number
+шеш:шеш RegNumber ; ! a number
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+LEXICON PronounRoot
+
+иму%<prn%>%<pers%>%<p1%>%<pl%>:иму # ;
+
+ишму%<prn%>%<pers%>%<p2%>%<pl%>:ишму # ;
+
+ме%<prn%>%<pers%>%<p1%>%<sg%>:ме # ;
+
+туь%<prn%>%<pers%>%<p2%>%<sg%>:туь # ;
+
+у%<prn%>%<dem%>%<sg%>%<nom%>:у # ;
+у%<prn%>%<dem%>%<sg%>:уре # ;
+у%<prn%>%<dem%>%<pl%>:угьо # ;
+
+и%<prn%>%<dem%>%<sg%>%<nom%>:и # ;
+и%<prn%>%<dem%>%<sg%>:ире # ;
+и%<prn%>%<dem%>%<pl%>:игьо # ;
+
+
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+LEXICON PrepositionRoot
+
+зеверо:зеверо RegPreposition ; ! a preposition
+кунбологъово:кунбологъово RegPreposition ; ! a preposition
+пусо:пусо RegPreposition ; ! a preposition
+эри:эри RegPreposition ; ! a preposition
+ери%<prep%>:ери # ;
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+LEXICON NounRoot
+Суриа%<np%>:Суриа # ;
+Довид%<np%>:Довид # ;
+Мейром%<np%>:Мейром # ;
+хуьшде%<n%>:хуьшде # ;
+вокурдедебу%<n%>:вокурдедебу # ;
+едейе%<n%>:едейе # ;
+
+муй:муй RegNounInfl ;
+
+артисткаш%<n%>%<sg%>:артисткаш # ;
+телуь:телуь RegNounInfl ;
+кемер:кемер RegNounInfl ;
+
+гийов:гийов RegNounInfl ;
+журубьо:журуб RegNounInfl ;
+хуне:хуне RegNounInfl ;
+
+вэхд:вэхд RegNounInfl ;
+деде:деде RegNounInfl ;
+чупон:чупон RegNounInfl ;
+шоь:шоь RegNounInfl ;
+вилейет:вилейет RegNounInfl ;
+институт:институт RegNounInfl ;
+дуланмиш:дуланмиш RegNounInfl ;
+дор:дор RegNounInfl ;
+гусбенд:гусбенд RegNounInfl ;
+керг:керг RegNounInfl ;
+школа:школа RegNounInfl ;
+кечи:кечи RegNounInfl ;
+гӀзсб:гӀзсб RegNounInfl ;
+деве:деве RegNounInfl ;
+учител:учител RegNounInfl ;
+гӀов:гӀов RegNounInfl ;
+сег:сег RegNounInfl ;
+жилид:жилид RegNounInfl ;
+дес:дес RegNounInfl ;
+имбуруз:имбуруз RegNounInfl ;
+дигь%<n%>%<dat%>:дигь RegNounInfl ;
+бала:бала RegNounInfl ;
+дуьл:дуьл RegNounInfl ;
+чапар%<n%>%<abl%>:чапар RegNounInfl ;
+гъирйет:гъирйет RegNounInfl ;
+тожир:тожир RegNounInfl ;
+жэгӀ:жэгӀ RegNounInfl ;
+гъэрзинке:гъэрзинке RegNounInfl ;
+пийоз:пийоз RegNounInfl ;
+хойе:хойе RegNounInfl ;
+худо:худо RegNounInfl ;
+гьово:гьово RegNounInfl ;
+сиб:сиб RegNounInfl ;
+гийов:гийов RegNounInfl ;
+велг:велг RegNounInfl ;
+муьшд:муьшд RegNounInfl ;
+геде:геде RegNounInfl ; ! A noun
+ен%<gen%>:ен # ;
+
+руз%<n%>:руз # ;
+ез%<abl%>:ез # ; ! A noun
+билогъ:билогъ RegNounInfl ; ! A noun
+мэрд:мэрд RegNounInfl; ! A noun
+дирногъ:дирногъ RegNounInfl ; ! A noun
+егьер:егьер RegNounInfl ; ! A noun
+хирс:хирс RegNounInfl ; ! A noun
+битоб%<n%>%<neg%>:битоб # ;
+вози:вози RegNounInfl ; ! A noun
+зен:зен RegNounInfl ; ! A noun
+мегь:мегь RegNounInfl ; ! A noun
+одоми:одоми RegNounInfl ; ! A noun
+
+обур:обур RegNounInfl ; ! A noun
+тоб:тоб RegNounInfl ; ! A noun
+хьуьрмет:хьуьрмет RegNounInfl ; ! A noun
+
+геми:геми RegNounInfl ; ! A noun
+гуж:гуж RegNounInfl ; ! A noun
+фубер:фубер RegNounInfl ; ! A noun
+
+гендуьм:гендуьм RegNounInfl ; ! A noun
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+LEXICON VerbRoot
+вокурде%<v%>:вокурде # ;
+
+атланмиш%<v%>%<inf%>:атланмиш # ;
+учмиш%<v%>%<inf%>:учмиш # ;
+дуланмиш%<v%>%<inf%>:дуланмиш # ;
+зе%<v%>%<inf%>:зере # ;
+дур%<v%>%<inf%>:дурра # ;
+дуллу%<v%>%<inf%>:дуллу # ;
+вирихд%<v%>%<inf%>:вирихд # ;
+хос%<v%>%<inf%>:хосд # ;
+геймиш%<v%>%<inf%>:геймиш # ;
+ватан%<v%>%<inf%>:ватан # ;
+ловтум%<v%>%<inf%>:ловтум # ;
+
+до%<v%>%<aor%>%<sg%>%<p1%>:дорум # ;
+дегешд%<v%>%<aor%>%<sg%>%<p3%>:дегешдуьт # ;
+омо%<v%>%<pres%>%<p3%>%<pl%>:оморенуьт # ;
+
+
+гирис:гирис RegVerbCon ; ! a verb
+рих:рих RegVerbCon ; ! a verb
+сух:сух RegVerbCon ; ! a verb
+мугу:мугу RegVerbVow ; ! a verb
+
+би:би IrreVerb ; ! a verb
+до:до RegVerbVow ; ! a verb
+зе:зе RegVerbVow ; ! a verb
+
+раф:раф RegVerbCon ; ! a verb
+сох:сох RegVerbCon ; ! a verb
+мун:мун RegVerbCon ; ! a verb
+фyрух:фyрух RegVerbCon ; ! a verb
+
+вебируьт:вебируьт  RegVerbCon ; ! a verb
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+! Resources:
+! http://wiki.apertium.org/wiki/Starting_a_new_language_with_HFST#Lexicon
+! http://wiki.apertium.org/wiki/Lttoolbox_and_lexc
+! http://wiki.apertium.org/wiki/Apertium-specific_conventions_for_lexc
+! https://kitwiki.csc.fi/twiki/bin/view/KitWiki/HfstHome
+! http://hfst.sourceforge.net/
+! http://www.cis.upenn.edu/~cis639/docs/lexc.html
+! http://wiki.apertium.org/wiki/Hfst

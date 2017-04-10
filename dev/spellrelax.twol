@@ -1,0 +1,10 @@
+Alphabet
+ А Б Ч Ж Д Е Э Ф Г И Й К Л М Н О П Р С Ш Т У В Х З ь Ӏ ъ
+ а б ч ж д е э ф г и й к л м н о п р с ш т у в х з
+ % 
+;
+
+Rules 
+
+"Remove suffix vowel with vowel-ending stem"
+a:a <=> _ ;

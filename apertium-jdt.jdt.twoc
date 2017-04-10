@@ -1,0 +1,58 @@
+Alphabet
+  %[%-neg%]:0
+  %[%+neg%]:0
+  %[%-nen%]:0
+  %[%+nen%]:0
+  %[%-loc%]:0
+  %[%+loc%]:0
+;
+
+Rules
+
+"Remove paths without matching suffix feature - verb negative"
+Fx:0 /<= _ ;
+   except
+       _ :* Fy:0 ;
+   where Fx in ( %[%-neg%] )
+         Fy in ( %[%+neg%] )
+   matched ;
+
+"Remove paths without matching prefix feature - verb negative"
+Fx:0 /<= _ ;
+   except
+       Fy:0 :* _ ;
+   where Fy in ( %[%-neg%] )
+         Fx in ( %[%+neg%] )
+matched ; 
+
+"Remove paths without matching suffix feature - noun negative"
+Fx:0 /<= _ ;
+   except
+       _ :* Fy:0 ;
+   where Fx in ( %[%-nen%] )
+         Fy in ( %[%+nen%] )
+   matched ;
+
+"Remove paths without matching prefix feature - noun negative"
+Fx:0 /<= _ ;
+   except
+       Fy:0 :* _ ;
+   where Fy in ( %[%-nen%] )
+         Fx in ( %[%+nen%] )
+matched ; 
+
+"Remove paths without matching suffix feature - locative"
+Fx:0 /<= _ ;
+   except
+       _ :* Fy:0 ;
+   where Fx in ( %[%-loc%] )
+         Fy in ( %[%+loc%] )
+   matched ;
+
+"Remove paths without matching prefix feature - locative"
+Fx:0 /<= _ ;
+   except
+       Fy:0 :* _ ;
+   where Fy in ( %[%-loc%] )
+         Fx in ( %[%+loc%] )
+matched ; 

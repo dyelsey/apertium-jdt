@@ -1,0 +1,8 @@
+prefix=@prefix@
+exec_prefix=${prefix}
+srcdir=@datarootdir@/apertium/apertium-jdt
+
+Name: apertium-jdt
+Description: Finite-state morphological transducer and constraint grammar for jdt 
+Version: @VERSION@
+

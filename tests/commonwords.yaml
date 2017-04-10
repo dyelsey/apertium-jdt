@@ -1,0 +1,27 @@
+Config:
+  hfst:
+    App: hfst-lookup
+    Gen: ../jdt.autogen.hfst
+    Morph: ../jdt.automorf.hfst
+Tests:
+  Commonwords:
+    э<art>: э
+    эри<post>: эри
+    мэрд<n>: мэрд
+    хирс<n>: хирс
+    эз<abl>: эз
+    мугу<v>: мугу
+    е<unk>: е
+    кор<unk>: кор
+    зугьун<unk>: зугьун
+    пирэ<unk>: пирэ
+    ве<unk>: ве
+    Э<unk>: Э
+    чугундурэ<unk>: чугундурэ
+    гэндуьмэ<unk>: гэндуьмэ
+    ми<unk>: ми
+    Би<unk>: Би
+    Эз<unk>: Эз
+    в<unk>: в
+    гуфдире<unk>: гуфдире
+    вэсал<unk>: вэсал
