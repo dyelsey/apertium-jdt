@@ -11,13 +11,14 @@ Multichar_Symbols
 %<prn%>   ! Pronoun
 %<inf%>   ! Infinitive
 %<post%>  ! Preposition
+%<pr%>   ! preposition
 
 ! Number morphology
 %<pl%>    ! Plural
 %<sg%>    ! Singular
 %<np%>
 ! tense
-%<az%> !
+%<az%> ! 
 %<pres%>  ! Present
 %<attr%>  ! Attributive
 %<p1%>    ! First person
@@ -29,6 +30,7 @@ Multichar_Symbols
 %<nom%>   ! Nominative
 %<gen%>	  ! genitive
 %<ez%>
+%<det%>   ! determiner
 
 ! Other symbols
 %>        ! Morpheme boundary
@@ -37,7 +39,7 @@ Multichar_Symbols
 %<caus%>  ! Causative
 %<neg%>   ! Negative
 %<abst%>  ! Abstract
-% 		  ! a space
+% 		  ! a space 
 
 %<aor%>   ! Aorist
 %<class%> ! Classifier
@@ -47,15 +49,15 @@ Multichar_Symbols
 %<prs%>   ! Present subjunctive
 %<ins%>   ! Instrumentals
 
-! punctuation
+! punctuation 
 %<sent%>  ! Sentence marker
 %<guio%>  ! Hyphen
 %<cm%>    ! Comma
 %<apos%>  ! Apostrophe
-%<rquot%> ! Quote marker (right hand side)
-%<lquot%> ! Quote marker (left hand side)
-%<rpar%>  ! Parenthetical marker (right hand side)
-%<lpar%>  ! Parenthetical marker (left hand side)
+%<rquot%> ! Quote marker (right hand side) 
+%<lquot%> ! Quote marker (left hand side) 
+%<rpar%>  ! Parenthetical marker (right hand side) 
+%<lpar%>  ! Parenthetical marker (left hand side) 
 
 %[%-neg%] !negative verb
 %[%+neg%]
@@ -74,7 +76,7 @@ LEXICON Root
 PrefixRoot ;
 
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-LEXICON PrefixRoot
+LEXICON PrefixRoot 
 
 %[%-neg%]:не VerbRoot ;
 %[%-nen%]:би NounRoot ;
@@ -91,17 +93,17 @@ AblativeRoot ;
 Punctuation ;
 
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-LEXICON RegNumber
+LEXICON RegNumber 
 
 %<num%>: # ;
 
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-LEXICON RegArticle
+LEXICON RegArticle 
 
 %<art%>%<p1%>: # ;
 
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-LEXICON RegAdjective
+LEXICON RegAdjective 
 %<adj%>: # ;
 %<n%>%<az%>:и # ;
 %<n%>%<attr%>+%<adj%>: # ;
@@ -135,14 +137,14 @@ LEXICON Punctuation
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 LEXICON RegVerbCon
 
-%<v%>%<inf%>:де #  ;
+%<v%>%<inf%>:де #  ; 
 
 %<v%>: # ;
-%<v%>%<past%>%<p1%>%<sg%>:дум #  ;
-%<v%>%<past%>%<p3%>%<sg%>:д #  ;
-%<v%>%<past%>%<p3%>%<pl%>:гьо #  ;
+%<v%>%<past%>%<p1%>%<sg%>:дум #  ; 
+%<v%>%<past%>%<p3%>%<sg%>:д #  ; 
+%<v%>%<past%>%<p3%>%<pl%>:гьо #  ; 
 
-%<v%>%<sg%>%<p1%>: #  ;
+%<v%>%<sg%>%<p1%>: #  ; 
 %<v%>%<caus%>%<inf%>:унде #  ; ! caustative
 
 %<v%>%<aor%>%<sg%>%<p1%>:дум #  ;
@@ -165,10 +167,10 @@ LEXICON RegVerbCon
 LEXICON RegVerbVow
 
 %<v%>: # ;
-%<v%>%<inf%>:ре #  ;
+%<v%>%<inf%>:ре #  ; 
 %<v%>%<past%>%<p1%>:рум #  ;
-%<v%>%<past%>%<p3%>%<sg%>: #  ;
-%<v%>%<sg%>%<p1%>: #  ;
+%<v%>%<past%>%<p3%>%<sg%>: #  ; 
+%<v%>%<sg%>%<p1%>: #  ; 
 %<v%>%<caus%>%<inf%>:унде #  ; ! caustative
 
 %<v%>%<aor%>%<sg%>%<p1%>:рум #  ;
@@ -189,9 +191,9 @@ LEXICON RegVerbVow
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 LEXICON IrreVerb
 
-%<v%>%<past%>%<p1%>:сдорум # ;
-%<v%>%<inf%>:ре #  ;
-%<v%>%<past%>%<p3%>%<sg%>:сдо #  ;
+%<v%>%<past%>%<p1%>:сдорум # ; 
+%<v%>%<inf%>:ре #  ; 
+%<v%>%<past%>%<p3%>%<sg%>:сдо #  ; 
 
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 LEXICON RegPreposition
@@ -217,9 +219,9 @@ LEXICON RegNounInfl
 %<n%>%<adj%>:зарзарийе # ;
 
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
 LEXICON RegAdverb
 
-%<n%>%<abst%>:и # ;
 %<adv%>: # ;
 %<class%>: # ;
 
@@ -246,7 +248,7 @@ LEXICON AdjectiveRoot
 тимтиж%<adj%>:тимтиж # ;
 хуьшге%<adj%>:хуьшге # ;
 тозе%<adj%>:тозе # ;
-герек%<adj%>:герек # ;
+герек%<adj%>:герек # ; 
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 LEXICON AdverbRoot
 
@@ -286,7 +288,7 @@ LEXICON NumberRoot
 нуьгь:нуьгь RegNumber ; ! a number
 пенж:пенж RegNumber ; ! a number
 сесе:се RegNumber ; ! a number
-се:се RegNumber ; ! a number
+се:се RegNumber ; ! a number  
 хьофд:хьофд RegNumber ; ! a number
 хьэшд:хьэшд RegNumber ; ! a number
 чор:чор RegNumber ; ! a number
@@ -307,7 +309,6 @@ LEXICON PronounRoot
 у%<prn%>%<dem%>%<sg%>:уре # ;
 у%<prn%>%<dem%>%<pl%>:угьо # ;
 
-и%<prn%>%<dem%>%<sg%>%<nom%>:и # ;
 и%<prn%>%<dem%>%<sg%>:ире # ;
 и%<prn%>%<dem%>%<pl%>:игьо # ;
 
@@ -322,11 +323,12 @@ LEXICON PrepositionRoot
 эри:эри RegPreposition ; ! a preposition
 ери%<prep%>:ери # ;
 
+
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 LEXICON NounRoot
 Суриа%<np%>:Суриа # ;
-Довид%<np%>:Довид # ;
-Мейром%<np%>:Мейром # ;
+Довид%<np%>%<ant%>%<m%>:Довид # ;
+Мейром%<np%>%<ant%>%<f%>:Мейром # ;
 хуьшде%<n%>:хуьшде # ;
 вокурдедебу%<n%>:вокурдедебу # ;
 едейе%<n%>:едейе # ;
@@ -336,7 +338,7 @@ LEXICON NounRoot
 артисткаш%<n%>%<sg%>:артисткаш # ;
 телуь:телуь RegNounInfl ;
 кемер:кемер RegNounInfl ;
-
+мерд:мерд RegNounInfl ;
 гийов:гийов RegNounInfl ;
 журубьо:журуб RegNounInfl ;
 хуне:хуне RegNounInfl ;
@@ -378,7 +380,10 @@ LEXICON NounRoot
 велг:велг RegNounInfl ;
 муьшд:муьшд RegNounInfl ;
 геде:геде RegNounInfl ; ! A noun
-ен%<gen%>:ен # ;
+
+эн%<pr%>+и%<det%>%<dem%>:эни # ;
+!и%<det%>%<dem%>:и # ;
+!эн%<pr%>:эн # ;
 
 руз%<n%>:руз # ;
 ез%<abl%>:ез # ; ! A noun
@@ -389,7 +394,7 @@ LEXICON NounRoot
 хирс:хирс RegNounInfl ; ! A noun
 битоб%<n%>%<neg%>:битоб # ;
 вози:вози RegNounInfl ; ! A noun
-зен:зен RegNounInfl ; ! A noun
+зен%<n%>%<sg%>:зен # ; ! A noun
 мегь:мегь RegNounInfl ; ! A noun
 одоми:одоми RegNounInfl ; ! A noun
 
@@ -434,7 +439,7 @@ LEXICON VerbRoot
 
 раф:раф RegVerbCon ; ! a verb
 сох:сох RegVerbCon ; ! a verb
-мун:мун RegVerbCon ; ! a verb
+мун%<v%>%<aor%>%<sg%>%<p3%>:мунд # ; ! a verb
 фyрух:фyрух RegVerbCon ; ! a verb
 
 вебируьт:вебируьт  RegVerbCon ; ! a verb
@@ -447,3 +452,4 @@ LEXICON VerbRoot
 ! http://hfst.sourceforge.net/
 ! http://www.cis.upenn.edu/~cis639/docs/lexc.html
 ! http://wiki.apertium.org/wiki/Hfst
+
