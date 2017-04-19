@@ -12,6 +12,7 @@ Multichar_Symbols
 %<inf%>   ! Infinitive
 %<post%>  ! Preposition
 %<pr%>   ! preposition
+%<conj%>   ! conjunction
 
 ! Number morphology
 %<pl%>    ! Plural
@@ -204,14 +205,12 @@ LEXICON RegPreposition
 LEXICON RegNounInfl
 
 
-%<n%>: # ;
 %<n%>%<sg%>: # ;
 %<n%>%<prs%>%<p1%>:денуьм # ;
 
 %<n%>%<pl%>:гьо # ;
 %<n%>%<neg%>%[+nen%]: # ;
 %<n%>%<dat%>:е # ;
-%<abl%>: # ;
 %<n%>%<loc%>%[+loc%]: # ;
 %<n%>%<loc%>%<ins%>%[+loc%]:евоз # ;
 %<n%>%<pl%>%<ez%>:гьой # ;
@@ -223,7 +222,6 @@ LEXICON RegNounInfl
 LEXICON RegAdverb
 
 %<adv%>: # ;
-%<class%>: # ;
 
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 LEXICON RegAblative
@@ -236,7 +234,8 @@ LEXICON RegAblative
 
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 LEXICON AdjectiveRoot
-согъ%<adj%>:согъ # ; ! adjective
+
+согъ:согъ RegAdjective ; ! adjective
 дуне:дуне RegAdjective ; ! adjective
 поиз:поиз RegAdjective ; ! adjective
 сенгъ:сенгъ RegAdjective ; ! adjective
@@ -249,18 +248,46 @@ LEXICON AdjectiveRoot
 хуьшге%<adj%>:хуьшге # ;
 тозе%<adj%>:тозе # ;
 герек%<adj%>:герек # ; 
+рач:рач RegAdjective ;
+вемаси:вемаси RegAdjective ;
+шуьгъэм:шуьгъэм RegNounInfl ;
+озгъун:озгъун RegAdjective ;
+келемерди:келемердиv RegAdjective ;
+типик:типик RegAdjective ;
+жон:жон RegAdjective ;
+пертмэхьтел:пертмэхьтел RegAdjective ; 
+чуькле:чуькле RegAdjective ; 
+мэхьтел:мэхьтел RegAdjective ; 
+руьгъэни:руьгъэни RegAdjective ;
+пэхьни:пэхьни RegAdjective ;
+сохъ:сохъ RegAdjective ;
+мэгӀлуьм:мэгӀлуьм RegAdjective ;
+пушоте:пушоте RegAdjective ;
+тэхьно:тэхьно RegAdjective ;
+билесумол:билесумол RegAdjective ;
+согъ:согъ RegAdjective ;
+гисне:гисне RegAdjective ;
+торик:торик RegAdjective ;
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 LEXICON AdverbRoot
-
+гьемише:гьемише RegAdverb ;
+имогьо:имогьо RegAdverb ;
+хуб:хуб RegAdverb ;
+гьеле:гьеле RegAdverb ;
+зури-зури:зури-зури RegAdverb ;
+йобу:йобу RegAdverb ;
+хэйли:хэйли RegAdverb ;
 бордор:бордор RegAdverb ; ! an adverb
 есир:есир RegAdverb ; ! an adverb
 нуькер:нуькер RegAdverb ; ! an adverb
-е% бедире%<art%>%<p1%>%<class%>:е% бедире # ; ! an adverb
-е% одгъу%<art%>%<p1%>%<class%>:е% одгъу # ; ! an adverb
-е% ниме%<art%>%<p1%>%<class%>:е% ниме # ; ! an adverb
-е% жуьфд%<art%>%<class%>:е% жуьфд # ;
+!е% бедире%<art%>%<p1%>%<class%>:е% бедире # ; ! an adverb
+!е% одгъу%<art%>%<p1%>%<class%>:е% одгъу # ; ! an adverb
+!е% ниме%<art%>%<p1%>%<class%>:е% ниме # ; ! an adverb
+!е% жуьфд%<art%>%<class%>:е% жуьфд # ;
+темиз:темиз RegAdverb ;
 
-!жуьфд%<class%>:жуьфд # ;
+
+жуьфд%<class%>:жуьфд # ;
 доне%<class%>:доне # ; ! an adverb
 е%<adv%>:е # ; ! an adverb
 гьерчуьтам%<adv%>:гьерчуьтам # ;
@@ -326,15 +353,174 @@ LEXICON PrepositionRoot
 
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 LEXICON NounRoot
+
+пул:пул RegNounInfl ;
+йесийовчи:йесийовчи RegNounInfl ;
+керг:керг RegNounInfl ;
+чапар:чапар RegNounInfl ;
+сэгӀэт:сэгӀэт RegNounInfl ;
+падшогь:падшогь RegNounInfl ;
+хэрегуш:хэрегуш RegNounInfl ;
+овчи:овчи RegNounInfl ;
+менэхьэфи:менэхьэфи RegNounInfl ;
+гоф:гоф RegNounInfl ;
+верф:верф RegNounInfl ;
+хори:хори RegNounInfl ;
+руш:руш RegNounInfl ;
+бигъ:бигъ RegNounInfl ;
+огъо:огъо RegNounInfl ;
+шори:шори RegNounInfl ;
+ники:ники RegNounInfl ;
+гӀуьом:гӀуьом RegNounInfl ;
+те%<pr%>:те # ;
+пушо%<pr%>:пушо # ;
+гqэил:гqэил RegNounInfl ;
+хьэйф:хьэйф RegNounInfl ;
+гушд:гушд RegNounInfl ;
+эрйьси:эрйьси RegNounInfl ;
+гов:гов RegNounInfl ;
+руз:руз RegNounInfl ;
+више:више RegNounInfl ;
+дере:дере RegNounInfl ;
+духдер:духдер RegNounInfl ;
+шев:шев RegNounInfl ;
+шйьвер:шйьвер RegNounInfl ;
+бирэхьне:бирэхьне RegNounInfl ;
+гъэевош:гъэевош RegNounInfl ;
+бике:бике RegNounInfl ;
+чуь%<prn%>:чуь # ;
+дерму:дерму RegNounInfl ;
+суьфре:суьфре RegNounInfl ;
+пинеши:пинеши RegNounInfl ;
+дивор:дивор RegNounInfl ;
+йон:йон RegNounInfl ;
+сифет:сифет RegNounInfl ;
+сипре:сипре RegNounInfl ;
+ки%<prn%>:ки # ;
+имисал:имисал RegNounInfl ;
+гиле:гиле RegNounInfl ;
+хуг:хуг RegNounInfl ;
+хун:хун RegNounInfl ;
+халиф:халиф RegNounInfl ;
+ижире%<det%>%<dem%>:ижире # ;
+жоллод:жоллод RegNounInfl ;
+шимшил:шимшил RegNounInfl ;
+гене:гене RegNounInfl ;
+шовгӀо:шовгӀо RegNounInfl ;
+бэгъ:бэгъ RegNounInfl ;
+гӀэсел:гӀэсел RegNounInfl ;
+мигӀид:мигӀид RegNounInfl ;
+карасди:карасди RegNounInfl ;
+музике:музике RegNounInfl ;
+мэгӀни:мэгӀни RegNounInfl ;
+куьф:куьф RegNounInfl ;
+корде:корде RegNounInfl ;
+мейит:мейит RegNounInfl ;
+рай:рай RegNounInfl ;
+тирйох:тирйох RegNounInfl ;
+пой:пой RegNounInfl ;
+гӀэребе:гӀэребе RegNounInfl ;
+чул:чул RegNounInfl ;
+дворник:дворник RegNounInfl ;
+куче:куче RegNounInfl ;
+партал:партал RegNounInfl ;
+дедей:дедей RegNounInfl ;
+кук:кук RegNounInfl ;
+завод:завод RegNounInfl ;
+шише:шише RegNounInfl ;
+инженер:инженер RegNounInfl ;
+тсех:тсех RegNounInfl ;
+пенжере:пенжере RegNounInfl ;
+аслан:аслан RegNounInfl ;
+хов:хов RegNounInfl ;
+туьлки:туьлки RegNounInfl ;
+тегьенг:тегьенг RegNounInfl ;
+чай:чай RegNounInfl ;
+чуп:чуп RegNounInfl ;
+хьуьзуьм:хьуьзуьм RegNounInfl ;
+трактор:трактор RegNounInfl ;
+герми:герми RegNounInfl ;
+гӀорд:гӀорд RegNounInfl ;
+гӀэдот:гӀэдот RegNounInfl ;
+олхогьини:олхогьини RegNounInfl ;
+тем:тем RegNounInfl ;
+кусе:кусе RegNounInfl ;
+гӀов:гӀов RegNounInfl ;
+дерйо:дерйо RegNounInfl ;
+шохьонгум:шохьонгум RegNounInfl ;
+сер:сер RegNounInfl ;
+васал:васал RegNounInfl ;
+тум:тум RegNounInfl ;
+женй:женй RegNounInfl ;
+хьэрекет:хьэрекет RegNounInfl ;
+гӀэрмудор:гӀэрмудор RegNounInfl ;
+нун:нун RegNounInfl ;
+чекмечи:чекмечи RegNounInfl ;
+сер:сер RegNounInfl ;
+нэхичи:нэхичи RegNounInfl ;
+гӀэйб:гӀэйб RegNounInfl ;
+гомиш:гомиш RegNounInfl ;
+жэгӀмет:жэгӀмет RegNounInfl ;
+ошне:ошне RegNounInfl ;
+биж:биж RegNounInfl ;
+игид:игид RegNounInfl ;
+герден:герден RegNounInfl ;
+гьэгъ:гьэгъ RegNounInfl ;
+согъсаламат:согъсаламат RegNounInfl ;
+суьрх:суьрх RegNounInfl ;
+егенер%<conj%>:егенер # ;
+егенер:егенер RegNounInfl ;
+гьер%<det%>%<dem%>:гьер # ;
+фенд:фенд RegNounInfl ;
+гӀэмел:гӀэмел RegNounInfl ;
+жуьргӀэт:жуьргӀэт RegNounInfl ;
+мар:мар RegNounInfl ;
+руьгъэ:руьгъэ RegNounInfl ;
+оммо%<pr%>:оммо # ;
+фэхьлеи:фэхьлеи RegNounInfl ;
+зэхьмет:зэхьмет RegNounInfl ;
+жофо:жофо RegNounInfl ;
+гъимет:гъимет RegNounInfl ;
+жогьил:жогьил RegNounInfl ;
+ведилуь:ведилуь RegNounInfl ;
+гъуморбаз:гъуморбаз RegNounInfl ;
+бала:бала RegNounInfl ;
+шилоли:шилоли RegNounInfl ;
+мужак:мужак RegNounInfl ;
+жэгӀчи:жэгӀчи RegNounInfl ;
+тур:тур RegNounInfl ;
+жэгӀ:жэгӀ RegNounInfl ;
+кекуьл:кекуьл RegNounInfl ;
+тимор:тимор RegNounInfl ;
+гези:гези RegNounInfl ;
+гъуногълугъи:гъуногълугъи RegNounInfl ;
+рэхьо:рэхьо RegNounInfl ;
+пурр:пурр RegNounInfl ;
+дохьори:дохьори RegNounInfl ;
+чуьшме:чуьшме RegNounInfl ;
+жэгъэржугъ:жэгъэржугъ RegNounInfl ;
+хуруз:хуруз RegNounInfl ;
+расди:расди RegNounInfl ;
+номус:номус RegNounInfl ;
+тевер:тевер RegNounInfl ;
+дирногъ:дирногъ RegNounInfl ;
+сес:сес RegNounInfl ;
+вини:вини RegNounInfl ;
+мешат:мешат RegNounInfl ;
+гъуши:гъуши RegNounInfl ;
+дивэгӀ:дивэгӀ RegNounInfl ;
+бебе:бебе RegNounInfl ;
+сийеь:сийеь RegNounInfl ;
+дервосе:дервосе RegNounInfl ;
+мих:мих RegNounInfl ;
+ранжбе:ранжбе RegNounInfl ;
 Суриа%<np%>:Суриа # ;
 Довид%<np%>%<ant%>%<m%>:Довид # ;
 Мейром%<np%>%<ant%>%<f%>:Мейром # ;
 хуьшде%<n%>:хуьшде # ;
 вокурдедебу%<n%>:вокурдедебу # ;
 едейе%<n%>:едейе # ;
-
 муй:муй RegNounInfl ;
-
 артисткаш%<n%>%<sg%>:артисткаш # ;
 телуь:телуь RegNounInfl ;
 кемер:кемер RegNounInfl ;
@@ -342,7 +528,6 @@ LEXICON NounRoot
 гийов:гийов RegNounInfl ;
 журубьо:журуб RegNounInfl ;
 хуне:хуне RegNounInfl ;
-
 вэхд:вэхд RegNounInfl ;
 деде:деде RegNounInfl ;
 чупон:чупон RegNounInfl ;
@@ -369,7 +554,6 @@ LEXICON NounRoot
 чапар%<n%>%<abl%>:чапар RegNounInfl ;
 гъирйет:гъирйет RegNounInfl ;
 тожир:тожир RegNounInfl ;
-жэгӀ:жэгӀ RegNounInfl ;
 гъэрзинке:гъэрзинке RegNounInfl ;
 пийоз:пийоз RegNounInfl ;
 хойе:хойе RegNounInfl ;
@@ -385,7 +569,7 @@ LEXICON NounRoot
 !и%<det%>%<dem%>:и # ;
 !эн%<pr%>:эн # ;
 
-руз%<n%>:руз # ;
+руз:руз RegNounInfl ;
 ез%<abl%>:ез # ; ! A noun
 билогъ:билогъ RegNounInfl ; ! A noun
 мэрд:мэрд RegNounInfl; ! A noun
@@ -409,39 +593,67 @@ LEXICON NounRoot
 гендуьм:гендуьм RegNounInfl ; ! A noun
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 LEXICON VerbRoot
-вокурде%<v%>:вокурде # ;
+темиз:темиз RegVerbCon ;
+вокурде:вокурде RegVerbVow ;
+видовус:видовус RegVerbCon ;
+хэрмон:хэрмон RegVerbCon ;
+вежеьис:вежеьис RegVerbCon ; 
+хэн:хэн RegVerbCon ;
+вешсем:вешсем RegVerbCon ;
+веровун:веровун RegVerbCon ;
+шувун:шувун RegVerbCon ;
+огол:огол RegVerbCon ;
+симов:симов RegVerbCon ;
+батмиш:батмиш RegVerbCon ;
+меслэхьэт:меслэхьэт RegVerbCon ; 
+шуш:шуш RegVerbCon ;
+рэхьбер:рэхьбер RegVerbCon ;
+бегьем:бегьем RegVerbCon ;
+вохур:вохур RegVerbCon ;
+верас:верас RegVerbCon ;
+овур:овур RegVerbCon ;
+имид:имид RegVerbCon ;
+хур:хур RegVerbCon ;
+бур:бур RegVerbCon ;
+пуч:пуч RegVerbCon ;
+хис:хис RegVerbCon ;
+варайун:варайун RegVerbCon ;
+фурмун:фурмун RegVerbCon ;
+зигьис:зигьис RegVerbCon ;
+вирих:вирих RegVerbCon ;
+вераси:вераси RegVerbVow ;
+вози:вози RegVerbVow ;
+гирисде:гирисде RegVerbVow ;
+пуьрси:пуьрси RegVerbVow ;
+офдо:офдо RegVerbVow ;
+шогъгъо:шогъгъо RegVerbVow ;
+овчийети:овчийети RegVerbVow ;
 
-атланмиш%<v%>%<inf%>:атланмиш # ;
-учмиш%<v%>%<inf%>:учмиш # ;
-дуланмиш%<v%>%<inf%>:дуланмиш # ;
-зе%<v%>%<inf%>:зере # ;
-дур%<v%>%<inf%>:дурра # ;
-дуллу%<v%>%<inf%>:дуллу # ;
-вирихд%<v%>%<inf%>:вирихд # ;
-хос%<v%>%<inf%>:хосд # ;
-геймиш%<v%>%<inf%>:геймиш # ;
-ватан%<v%>%<inf%>:ватан # ;
-ловтум%<v%>%<inf%>:ловтум # ;
-
-до%<v%>%<aor%>%<sg%>%<p1%>:дорум # ;
+атланмиш:атланмиш RegVerbCon ;
+учмиш:учмиш RegVerbCon ;
+дуланмиш:дуланмиш RegVerbCon ;
+зе:зе RegVerbVow ;
+дур:дур RegVerbCon ;
+дуллу:дуллу RegVerbVow ;
+вирихд:вирихд RegVerbCon ;
+хос:хос RegVerbCon ;
+геймиш:геймиш RegVerbCon ;
+ватан:ватан RegVerbCon ;
+ловтум:ловтум RegVerbCon ;
+до:до RegVerbVow ;
 дегешд%<v%>%<aor%>%<sg%>%<p3%>:дегешдуьт # ;
 омо%<v%>%<pres%>%<p3%>%<pl%>:оморенуьт # ;
-
-
 гирис:гирис RegVerbCon ; ! a verb
 рих:рих RegVerbCon ; ! a verb
 сух:сух RegVerbCon ; ! a verb
 мугу:мугу RegVerbVow ; ! a verb
-
 би:би IrreVerb ; ! a verb
 до:до RegVerbVow ; ! a verb
 зе:зе RegVerbVow ; ! a verb
-
 раф:раф RegVerbCon ; ! a verb
 сох:сох RegVerbCon ; ! a verb
-мун%<v%>%<aor%>%<sg%>%<p3%>:мунд # ; ! a verb
+мун:мун RegVerbCon ;
 фyрух:фyрух RegVerbCon ; ! a verb
-
 вебируьт:вебируьт  RegVerbCon ; ! a verb
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 ! Resources:

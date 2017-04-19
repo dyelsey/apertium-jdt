@@ -5,6 +5,19 @@ DELIMITERS = "<.>" ;
 LIST Case = (n s) (n p) ; # A set that matches either a Noun Singular or a Noun Plural
 
 SECTION
+#Remove adv if followed by a verb
+REMOVE (adv) IF (1 (v)) ;
+
+#Select verb tag if followed by a verb
+SELECT (v) IF (1 (v)) ;
+
+#Remove verb if not followed by a verb
+REMOVE (v) IF (NOT 1 (v)) ;
+
+#Remove conj if it is not the first word in the sentence
+REMOVE (conj) IF ((-1 (v)) OR (-1 (adj)) OR (-1 (n)) OR (-1 (adv)) OR (-1 (pr)) OR (-1 (det))) ;
+
+
 #Remove adv if followed by a classifier
 REMOVE (adv) IF (1 (class)) ;
 
